@@ -3,9 +3,9 @@
   "version": "0.3.0",
   "description": "A sample Node.js app using Express 4",
   "engines": {
-    "node": "12.x"
+    "node": "12.xx"
   },
-  "main": "index.js",
+  "main": "indexx.js",
   "scripts": {
     "start": "node index.js",
     "test": "node test.js"
