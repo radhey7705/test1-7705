@@ -1,5 +1,5 @@
 steps: 
-- name: 'gcr.io/cloud-builders/dockers'
+- name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/myapp:latest', '-t', 'gcr.io/$PROJECT_ID/myapp:$COMMIT_SHA', '-t', 'gcr.io/$PROJECT_ID/myapp:$BUILD_ID']
   id: 'build-image-for-ketul'
   waitFor: ['-']
