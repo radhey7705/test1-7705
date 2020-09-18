@@ -1,2 +1,3 @@
-npm i
-npm run start 
+FROM node:alpine
+RUN npm i
+CMD npm run start 
