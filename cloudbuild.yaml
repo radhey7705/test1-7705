@@ -12,7 +12,7 @@ steps:
   args:
   - 'run'
   - 'deploy'
-  - 'myawesomeapp'
+  - 'myawesomeapppp'
   - '--image'
   - 'gcr.io/$PROJECT_ID/myapp:$COMMIT_SHA'
   - '--region'
@@ -23,20 +23,6 @@ steps:
   waitFor: ['push-image-to-container-registry']
   id: 'deploy-to-cloud-run'
 
-# - name: 'gcr.io/docker-builders/gcloud'
-#   args: 
-#     - 'run'
-#     - 'deploy'
-#     - 'myawesomeapppp'
-#     - '--image'
-#     - 'gcr.io/$PROJECT_ID/myapp:$COMMIT_SHA'
-#     - '--region'
-#     - 'ap-southeast1'
-#     - '--platform'
-#     - 'managed'
-#     - '--allow-unauthenticated'
-#   waitFor: ['push-image-to-container-registry']
-#   id: 'deploy-to-cloud-run'
 images:
 - 'gcr.io/$PROJECT_ID/myapp:latest'
 - 'gcr.io/$PROJECT_ID/myapp:$COMMIT_SHA'
