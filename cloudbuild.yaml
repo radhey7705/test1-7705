@@ -7,7 +7,21 @@ steps:
   args: ['push', 'gcr.io/$PROJECT_ID/myapp:$COMMIT_SHA']
   id: 'push-image-to-container-registry'
   waitFor: ['build-image-for-ketul']
-# images:
-# - 'gcr.io/$PROJECT_ID/myapp:latest'
-# - 'gcr.io/$PROJECT_ID/myapp:$COMMIT_SHA'
-# - 'gcr.io/$PROJECT_ID/myapp:$BUILD_ID'
+- name: 'gcr.io/docker-builders/gcloud'
+  args: 
+    - 'run'
+    - 'deploy'
+    - 'myawesomeapppp'
+    - '--image'
+    -  'gcr.io/$PROJECT_ID/myapp:$COMMIT_SHA'
+    - '--region'
+    - 'ap-southeast1'
+    - '--platform'
+    - 'managed'
+    - '--allow-unauthenticated'
+  waitFor: ['push-image-to-container-registry']
+  id: 'deploy-to-cloud-run'  
+images:
+- 'gcr.io/$PROJECT_ID/myapp:latest'
+- 'gcr.io/$PROJECT_ID/myapp:$COMMIT_SHA'
+- 'gcr.io/$PROJECT_ID/myapp:$BUILD_ID'
