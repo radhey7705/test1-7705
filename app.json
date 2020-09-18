@@ -1,7 +1,7 @@
 {
   "name": "Start on Heroku: Node.js",
 <<<<<<< HEAD
-  "description": "A barebones Node.js aapp using Express 4",
+  "description": "A barebones Node.js app using Express 4",
 =======
   "description": "A  Node.js app using Express 4",
 >>>>>>> 4b84bcaddee50dcc82af0cc743f34cfa4b1d5d2b
