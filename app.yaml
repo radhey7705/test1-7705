@@ -1,0 +1,23 @@
+runtime: custom
+env: flex
+version: v1
+service: felx-service
+handlers:
+    http_headers:
+        X-Foo-Header: foo
+        X-Bar-Header: bar 
+        vary: Accept-Encoding
+        redirect_http_response_code: 301
+resources:
+    cpu: 1
+    memory_gb: 1
+    disk_size_gb: 10
+env_variables:
+  TEST: "cool"
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 1
+  max_instances: 3
+  min_pending_latency: 30ms
+  max_pending_latency: automatic
+  max_concurrent_requests: 50
